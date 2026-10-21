@@ -1,0 +1,8 @@
+# Python 3.10; versions used for the local R1 analysis environment
+numpy==2.2.6
+pandas==2.3.3
+scikit-learn==1.7.2
+scipy==1.15.3
+threadpoolctl==3.6.0
+optuna==4.7.0
+matplotlib==3.10.8

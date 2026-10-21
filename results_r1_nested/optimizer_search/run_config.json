@@ -1,0 +1,23 @@
+{
+  "feature_dir": "svm-mlp-comparison/features_win",
+  "out_dir": "results_r1_nested/optimizer_search",
+  "outer_folds": 5,
+  "outer_repeats": 3,
+  "inner_folds": 4,
+  "objective_calls_per_method": 200,
+  "top_k": 16,
+  "corr_threshold": 0.85,
+  "seed": 20261012,
+  "methods": [
+    "random",
+    "optuna",
+    "bpso",
+    "bwoa",
+    "bde",
+    "bsade"
+  ],
+  "candidate_space": "15 bits, three 5-bit hidden widths in [0,31]; zero widths omitted",
+  "training": "logistic activation; early stopping; subject-and-class-balanced sample weights",
+  "objective": "mean inner-fold subject-level balanced accuracy at fixed threshold 0.5",
+  "config_hash": "a500e0154cbed7f348a230ceda0f36e762bf9b6b22ec4e699297d27f65404a4f"
+}

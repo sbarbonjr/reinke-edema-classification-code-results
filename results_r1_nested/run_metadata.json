@@ -1,0 +1,51 @@
+{
+  "arguments": {
+    "feature_dir": "svm-mlp-comparison/features_win",
+    "out_dir": "results_r1_nested",
+    "outer_folds": 5,
+    "outer_repeats": 3,
+    "inner_folds": 4,
+    "top_k": 16,
+    "corr_threshold": 0.85,
+    "seed": 20261012
+  },
+  "feature_files": {
+    "fft_topk_hann": "fft_topk_hann.csv",
+    "mfcc_stats": "mfcc_stats.csv",
+    "spectral_stats": "spectral_stats.csv",
+    "wavlm": "wav2vec2.csv",
+    "wpd_haar7_std": "wpd_haar7_std.csv"
+  },
+  "mlp_seeds": [
+    17,
+    37,
+    59,
+    83,
+    109
+  ],
+  "mlp_architectures": [
+    [
+      16
+    ],
+    [
+      32
+    ],
+    [
+      32,
+      16
+    ]
+  ],
+  "n_rows": 851,
+  "n_subjects": 36,
+  "class_subjects": {
+    "0": 20,
+    "1": 16
+  },
+  "python": "3.10.12 (main, Aug 31 2026, 10:18:17) [GCC 11.4.0]",
+  "platform": "Linux-5.15.0-190-generic-x86_64-with-glibc2.35",
+  "sklearn": "1.7.2",
+  "config_hash": "7b367494560b73f6fe6ed8936120fdef1f46fbf364ddcd4ee0e8e07b4558d2d3",
+  "elapsed_seconds": 2681.361602783203,
+  "completed_at": "2026-10-12 16:48:03",
+  "note": "Brier scores and calibration bins assess uncalibrated out-of-fold probabilities; no outer outcomes are used to fit a calibration transform."
+}

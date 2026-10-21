@@ -1,0 +1,41 @@
+{
+  "design": "fixed ReLU counterpart to the fixed logistic MLP; no inner-loop model selection",
+  "architecture": [
+    16,
+    8
+  ],
+  "activation": "relu",
+  "seed": 42,
+  "optimizer": "adam",
+  "learning_rate_init": 0.001,
+  "max_iter": 500,
+  "early_stopping": true,
+  "validation_fraction": 0.15,
+  "n_iter_no_change": 20,
+  "arms": {
+    "mlp_relu_fixed_unweighted": {
+      "patient_balanced": false
+    },
+    "mlp_relu_fixed_patient_balanced": {
+      "patient_balanced": true
+    }
+  },
+  "feature_dir": "svm-mlp-comparison/features_win",
+  "split_manifest": "results_r1_nested/outer_split_manifest.csv",
+  "top_k": 16,
+  "corr_threshold": 0.85,
+  "feature_files": {
+    "fft_topk_hann": "fft_topk_hann.csv",
+    "mfcc_stats": "mfcc_stats.csv",
+    "spectral_stats": "spectral_stats.csv",
+    "wavlm": "wav2vec2.csv",
+    "wpd_haar7_std": "wpd_haar7_std.csv"
+  },
+  "n_rows": 851,
+  "n_subjects": 36,
+  "n_outer_splits": 15,
+  "python": "3.10.12 (main, Aug 31 2026, 10:18:17) [GCC 11.4.0]",
+  "platform": "Linux-5.15.0-190-generic-x86_64-with-glibc2.35",
+  "sklearn": "1.7.2",
+  "config_hash": "fe597614b362661baab6f437be65437eb86ebd5d9fb5ea8224164d012ab72e9c"
+}

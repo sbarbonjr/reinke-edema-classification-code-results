@@ -1,0 +1,49 @@
+{
+  "design": "fixed ReLU initialization sensitivity on the shared R1 outer subject folds",
+  "architecture": [
+    16,
+    8
+  ],
+  "activation": "relu",
+  "seeds": [
+    42,
+    123,
+    2026,
+    3407,
+    8675309
+  ],
+  "optimizer": "adam",
+  "learning_rate_init": 0.001,
+  "max_iter": 500,
+  "early_stopping": true,
+  "validation_fraction": 0.15,
+  "n_iter_no_change": 20,
+  "early_stopping_validation": "scikit-learn random window-level split within outer training partition",
+  "arms": {
+    "mlp_relu_fixed_unweighted": {
+      "patient_balanced": false
+    },
+    "mlp_relu_fixed_patient_balanced": {
+      "patient_balanced": true
+    }
+  },
+  "feature_dir": "svm-mlp-comparison/features_win",
+  "split_manifest": "results_r1_nested/outer_split_manifest.csv",
+  "top_k": 16,
+  "corr_threshold": 0.85,
+  "feature_files": {
+    "fft_topk_hann": "fft_topk_hann.csv",
+    "mfcc_stats": "mfcc_stats.csv",
+    "spectral_stats": "spectral_stats.csv",
+    "wavlm": "wav2vec2.csv",
+    "wpd_haar7_std": "wpd_haar7_std.csv"
+  },
+  "n_rows": 851,
+  "n_subjects": 36,
+  "n_outer_splits": 15,
+  "python": "3.10.12 (main, Aug 31 2026, 10:18:17) [GCC 11.4.0]",
+  "platform": "Linux-5.15.0-190-generic-x86_64-with-glibc2.35",
+  "sklearn": "1.7.2",
+  "interpretation": "Seed-level variability is descriptive training sensitivity, not independent subject-level evidence.",
+  "config_hash": "b1c02f37bc4f608a8ea6b95f8b468a396c703548baa21a4afca8eaaffa4d648c"
+}
